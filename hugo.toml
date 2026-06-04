@@ -2,7 +2,7 @@ baseURL = "https://dhruvjaink07.github.io/"
 languageCode = "en-us"
 title = "Bytes by Dhruv"
 theme = "paperMod"
-[params]
-  BookSection = "posts"
-  cover.responsiveImages = false
-  cover.linkFullImages = false
+# [params]
+#   BookSection = "posts"
+#   cover.responsiveImages = false
+#   cover.linkFullImages = false
