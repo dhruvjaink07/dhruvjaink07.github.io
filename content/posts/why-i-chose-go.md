@@ -25,7 +25,6 @@ What happened over the next few days changed how I think about backend engineeri
 
 ---
 
-
 ## The Assignment That Started Everything
 
 There's something clarifying about learning a language under deadline pressure. You can't afford rabbit holes. You just need to make something work.
