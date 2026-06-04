@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Why I Chose Go and Why I&#39;m Not Going Back | Bytes by Dhruv</title>
+<meta name="keywords" content="go, backend, cloud">
+<meta name="description" content="Why I Chose Go and Why I&rsquo;m Not Going Back
+The accidental start, a cloud rabbit hole, and what I&rsquo;ve built since
+
+I didn&rsquo;t choose Go. Go kind of chose me.
+It started with a job application. I had applied for a backend developer position, two years of backend experience behind me, and the take-home task was to build a Notification Service. The catch: they wanted it in Go. I had never written a single line of it. I had to Google the syntax to write a main function.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/why-i-chose-go/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/why-i-chose-go/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Bytes by Dhruv (Alt + H)">Bytes by Dhruv</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Why I Chose Go and Why I&#39;m Not Going Back
+    </h1>
+    <div class="post-meta">
+
+<span title='2026-06-04 00:00:00 +0000 UTC'>June 4, 2026</span>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><h1 id="why-i-chose-go-and-why-im-not-going-back">Why I Chose Go and Why I&rsquo;m Not Going Back<a hidden class="anchor" aria-hidden="true" href="#why-i-chose-go-and-why-im-not-going-back">#</a></h1>
+<p><em>The accidental start, a cloud rabbit hole, and what I&rsquo;ve built since</em></p>
+<hr>
+<p>I didn&rsquo;t choose Go. Go kind of chose me.</p>
+<p>It started with a job application. I had applied for a backend developer position, two years of backend experience behind me, and the take-home task was to build a Notification Service. The catch: they wanted it in Go. I had never written a single line of it. I had to Google the syntax to write a main function.</p>
+<p>What happened over the next few days changed how I think about backend engineering.</p>
+<!-- raw HTML omitted -->
+<p><img alt="Go Gopher" loading="lazy" src="/images/go-banner.png"></p>
+<!-- raw HTML omitted -->
+<hr>
+<h2 id="the-assignment-that-started-everything">The Assignment That Started Everything<a hidden class="anchor" aria-hidden="true" href="#the-assignment-that-started-everything">#</a></h2>
+<p>There&rsquo;s something clarifying about learning a language under deadline pressure. You can&rsquo;t afford rabbit holes. You just need to make something work.</p>
+<p>What surprised me wasn&rsquo;t that I <em>could</em> build the notification service. It was how quickly I could. Go&rsquo;s standard library had everything I needed: HTTP, JSON, concurrency primitives, all consistent and well-documented. No framework to fight.</p>
+<p>The goroutine model hit me especially hard. I needed to fan out notifications to multiple channels concurrently (email, push, in-app) without one slow channel blocking the others. I spun up goroutines, used a channel to collect results, and the code read like what I was <em>thinking</em>. That almost never happens when you&rsquo;re picking up something new.</p>
+<p>I didn&rsquo;t want to stop writing Go after that.</p>
+<hr>
+<h2 id="why-the-numbers-make-sense">Why the Numbers Make Sense<a hidden class="anchor" aria-hidden="true" href="#why-the-numbers-make-sense">#</a></h2>
+<p>I wasn&rsquo;t just feeling something. The data backs it up.</p>
+<p>Go has around <strong>5.8 million developers</strong> worldwide as of 2024, up from 3.8 million in 2020. In GitHub&rsquo;s 2024 stats, it ranked as the <strong>third fastest-growing language</strong>, behind only Python and TypeScript. According to the Stack Overflow Developer Survey, <strong>14.4% of professional developers</strong> now use Go as a primary language.</p>
+<p>The satisfaction numbers are even more telling: <strong>93% of Go developers</strong> reported being satisfied with the language in the 2024 Go Developer Survey. That&rsquo;s not a language people are tolerating. That&rsquo;s a language people are actively choosing to stay in.</p>
+<p>And on the market side, median Go developer salaries sit around <strong>$75,000 to $135,000 globally</strong>, with senior roles in the US regularly reaching $160,000+. The demand is real, and the supply of experienced Go developers hasn&rsquo;t caught up yet.</p>
+<hr>
+<h2 id="the-google-cloud-rabbit-hole">The Google Cloud Rabbit Hole<a hidden class="anchor" aria-hidden="true" href="#the-google-cloud-rabbit-hole">#</a></h2>
+<p>That assignment sent me somewhere I hadn&rsquo;t planned. I enrolled in Google Cloud labs, partly curious, partly sensing I was onto something. The deeper I went into cloud infrastructure, the more Go appeared. Not as an option. As the default.</p>
+<p><strong>Kubernetes. Terraform. Docker. Prometheus.</strong> The tooling that the entire cloud-native world runs on was built in Go. The language hadn&rsquo;t just become popular in this space. It had shaped it.</p>
+<p>The reason became obvious quickly. Go compiles to a single static binary with no runtime and no dependency hell. For cloud deployments where containers need to start fast and run lean, that&rsquo;s enormously valuable. Cloudflare&rsquo;s 2024 data showed Go accounting for <strong>12% of all API calls</strong>, up from 8.4% the year before, overtaking Node.js for automated API traffic.</p>
+<p>My interest stopped being accidental after that. I was choosing Go.</p>
+<hr>
+<h2 id="building-failsafe">Building FailSafe<a hidden class="anchor" aria-hidden="true" href="#building-failsafe">#</a></h2>
+<p>I wanted to push on Go&rsquo;s concurrency in a serious way. That led to <strong>FailSafe</strong>, a chaos engineering and resilience testing platform I built as an academic project.</p>
+<p>FailSafe needed to orchestrate concurrent fault-injection experiments across distributed systems while continuously observing and measuring what was happening. Goroutines made the parallelism feel natural. The <code>context</code> package, which propagates deadlines and cancellation signals through your entire call stack, was something I hadn&rsquo;t seen handled this cleanly anywhere before. When you&rsquo;re running timed experiments that need to terminate gracefully and clean up after themselves, <code>context</code> is the difference between correct behaviour and subtle bugs that only surface under load.</p>
+<p>I&rsquo;ll do a full deep-dive on FailSafe in the next post. But building it showed me what Go is actually for: systems where performance and concurrency aren&rsquo;t nice-to-have, they&rsquo;re the point.</p>
+<hr>
+<h2 id="why-im-staying">Why I&rsquo;m Staying<a hidden class="anchor" aria-hidden="true" href="#why-im-staying">#</a></h2>
+<p>Go feels <em>considered</em>. The compiler catches mistakes early. The standard library handles more than you expect. When something goes wrong, the stack trace points to your code with no framework magic to trace through.</p>
+<p>Over 80% of Go developers learned it <em>after</em> starting their professional careers, according to the 2025 Go Developer Survey. It&rsquo;s not a beginner&rsquo;s language. It&rsquo;s a language experienced engineers actively seek out. I&rsquo;m one of them now.</p>
+<hr>
+<h2 id="where-to-start-if-youre-curious">Where to Start If You&rsquo;re Curious<a hidden class="anchor" aria-hidden="true" href="#where-to-start-if-youre-curious">#</a></h2>
+<p>If this resonated and you want to try Go yourself, here&rsquo;s what actually works:</p>
+<ul>
+<li><strong><a href="https://go.dev/tour/">A Tour of Go</a></strong> - The official interactive tutorial. Write and run Go in your browser. Start here, no setup needed.</li>
+<li><strong><a href="https://gobyexample.com/">Go by Example</a></strong> - Annotated code snippets for every concept. I still use it as a reference.</li>
+<li><strong><a href="https://go.dev/doc/effective_go">Effective Go</a></strong> - Official guide to writing idiomatic Go. Read this once you have the basics.</li>
+<li><strong><a href="https://www.gopl.io/">The Go Programming Language</a></strong> (book, paid) - The definitive text. Written by the people who know the language best.</li>
+<li><strong><a href="https://www.boot.dev/">Boot.dev</a></strong> - Interactive Go course if you prefer structured, guided learning.</li>
+</ul>
+<p>The fastest way to actually learn it: pick a small service you&rsquo;d normally build in your usual stack. Build it in Go instead. The friction is lower than you think.</p>
+<hr>
+<p><em>Next up: a full technical deep-dive into FailSafe, what it does, how Go&rsquo;s concurrency made it possible, and what I learned building it.</em></p>
+<hr>
+<p><em>Follow this blog to catch that one when it drops.</em></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/go/">Go</a></li>
+      <li><a href="http://localhost:1313/tags/backend/">Backend</a></li>
+      <li><a href="http://localhost:1313/tags/cloud/">Cloud</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">Bytes by Dhruv</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
