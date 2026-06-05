@@ -39,3 +39,5 @@ theme = "PaperMod"
   name = "Search"
   url = "/search/"
   weight = 3
+[minify]
+  disableCSS = true
