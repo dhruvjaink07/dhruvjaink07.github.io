@@ -2,6 +2,40 @@ baseURL = "https://dhruvjaink07.github.io/"
 languageCode = "en-us"
 title = "Bytes by Dhruv"
 theme = "PaperMod"
+
 [params]
-  [params.assets]
-    disableFingerprinting = true
+  author = "Dhruv"
+  description = "A blog about my journey in tech, mobile, backend engineering and cloud."
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = true
+  defaultTheme = "dark"
+
+  [params.homeInfoParams]
+    Title = "Hey, I'm Dhruv 👋"
+    Content = "Welcome to Bytes by Dhruv — where I write about Go, mobile, backend engineering, cloud, and everything in between."
+
+[[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/dhruvjaink07"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "Tags"
+  url = "/tags/"
+  weight = 2
+
+[[menu.main]]
+  name = "Search"
+  url = "/search/"
+  weight = 3

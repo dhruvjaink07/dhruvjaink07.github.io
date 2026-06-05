@@ -5,8 +5,6 @@ draft: false
 tags: ["go", "backend", "cloud"]
 ---
 
-# Why I Chose Go and Why I'm Not Going Back
-
 _The accidental start, a cloud rabbit hole, and what I've built since_
 
 ---
