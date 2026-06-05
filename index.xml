@@ -1,5 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Bytes by Dhruv</title><link>https://dhruvjaink07.github.io/</link><description>Recent content on Bytes by Dhruv</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 04 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://dhruvjaink07.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Why I Chose Go and Why I'm Not Going Back</title><link>https://dhruvjaink07.github.io/posts/why-i-chose-go/</link><pubDate>Thu, 04 Jun 2026 00:00:00 +0000</pubDate><guid>https://dhruvjaink07.github.io/posts/why-i-chose-go/</guid><description>&lt;h1 id="why-i-chose-go-and-why-im-not-going-back"&gt;Why I Chose Go and Why I&amp;rsquo;m Not Going Back&lt;/h1&gt;
-&lt;p&gt;&lt;em&gt;The accidental start, a cloud rabbit hole, and what I&amp;rsquo;ve built since&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Bytes by Dhruv</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Bytes by Dhruv</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 04 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why I Chose Go and Why I&#39;m Not Going Back</title>
+      <link>http://localhost:1313/posts/why-i-chose-go/</link>
+      <pubDate>Thu, 04 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/why-i-chose-go/</guid>
+      <description>&lt;p&gt;&lt;em&gt;The accidental start, a cloud rabbit hole, and what I&amp;rsquo;ve built since&lt;/em&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;I didn&amp;rsquo;t choose Go. Go kind of chose me.&lt;/p&gt;
-&lt;p&gt;It started with a job application. I had applied for a backend developer position, two years of backend experience behind me, and the take-home task was to build a Notification Service. The catch: they wanted it in Go. I had never written a single line of it. I had to Google the syntax to write a main function.&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;It started with a job application. I had applied for a backend developer position, two years of backend experience behind me, and the take-home task was to build a Notification Service. The catch: they wanted it in Go. I had never written a single line of it. I had to Google the syntax to write a main function.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
