@@ -4,8 +4,8 @@ title = "Bytes by Dhruv"
 theme = "PaperMod"
 
 [params]
-  author = "Dhruv"
-  description = "A blog about my journey in tech, mobile, backend engineering and cloud."
+  author = "Dhruv Jain"
+  description = "A collection about my journey in tech"
   ShowReadingTime = true
   ShowShareButtons = true
   ShowPostNavLinks = true
@@ -16,7 +16,7 @@ theme = "PaperMod"
 
   [params.homeInfoParams]
     Title = "Hey, I'm Dhruv 👋"
-    Content = "Welcome to Bytes by Dhruv — where I write about Go, mobile, backend engineering, cloud, and everything in between."
+    Content = "Welcome to Bytes by Dhruv — where I write about my learnings in Go, mobile, backend engineering, cloud, and everything in between."
 
 [[params.socialIcons]]
   name = "github"
@@ -40,4 +40,3 @@ theme = "PaperMod"
   url = "/search/"
   weight = 3
 [minify]
-  disableCSS = true

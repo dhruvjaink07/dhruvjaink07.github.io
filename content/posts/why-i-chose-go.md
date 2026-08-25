@@ -5,6 +5,7 @@ draft: false
 tags: ["go", "backend", "cloud"]
 ---
 
+<!-- markdownlint-disable-next-line MD036 -->
 _The accidental start, a cloud rabbit hole, and what I've built since_
 
 ---
@@ -16,7 +17,7 @@ It started with a job application. I had applied for a backend developer positio
 What happened over the next few days changed how I think about backend engineering.
 
 <div style="text-align: center;">
-
+c  
 ![Go Gopher](/images/go-banner.png)
 
 </div>
